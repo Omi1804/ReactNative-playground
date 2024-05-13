@@ -2,6 +2,8 @@ import React from 'react';
 
 import {View, Text, StyleSheet, useColorScheme} from 'react-native';
 
+//Hello world with stylings
+
 const AppPro = (): JSX.Element => {
   const isDarkMode = useColorScheme() === 'dark'; //this is the way to figure out is the phone is in dark mode or light mode
 

@@ -2,6 +2,7 @@ import React from 'react';
 
 import {View, Text, SafeAreaView} from 'react-native';
 
+//basic hello worold app
 const App = () => {
   return (
     <SafeAreaView>
