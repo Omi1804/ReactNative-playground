@@ -4,9 +4,7 @@ import React from 'react';
 export default function ElevatedCards() {
   return (
     <View>
-      <Text style={{textAlign: 'center', fontSize: 24, fontWeight: 'bold'}}>
-        ElevatedCards
-      </Text>
+      <Text style={styles.headingText}>ElevatedCards</Text>
       <ScrollView horizontal={true} style={styles.container}>
         <View style={[styles.card, styles.cardElevated]}>
           <Text>Tap</Text>
@@ -40,6 +38,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     paddingHorizontal: 8,
+    color: '#000000',
   },
 
   card: {

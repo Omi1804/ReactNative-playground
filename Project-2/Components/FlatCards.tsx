@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     paddingHorizontal: 8,
+    color: '#000000',
   },
   card: {
     width: 100,

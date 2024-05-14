@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     padding: 4,
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#000000',
   },
   card: {
     height: 'auto',
