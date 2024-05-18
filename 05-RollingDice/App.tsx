@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import type {PropsWithChildren} from 'react';
 import React, {useState} from 'react';
+import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
 import DiceOne from './assets/One.png';
 import DiceTwo from './assets/Two.png';
@@ -15,6 +16,11 @@ import DiceThree from './assets/Three.png';
 import DiceFour from './assets/Four.png';
 import DiceFive from './assets/Five.png';
 import DiceSix from './assets/Six.png';
+
+const options = {
+  enableVibrateFallback: true,
+  ignoreAndroidSystemSettings: false,
+};
 
 //This is the proper way of importing Images to the native application
 
@@ -60,6 +66,8 @@ export default function App(): JSX.Element {
         setDiceImage(DiceOne);
         break;
     }
+
+    ReactNativeHapticFeedback.trigger('impactHeavy', options);
   };
   return (
     <View style={styles.container}>
