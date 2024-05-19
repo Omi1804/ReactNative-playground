@@ -244,14 +244,18 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   secondaryBtn: {
-    width: 120,
+    maxWidth: 120,
     padding: 10,
     borderRadius: 8,
     marginHorizontal: 8,
     backgroundColor: '#CAD5E2',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   secondaryBtnTxt: {
     textAlign: 'center',
+    color: '#000000',
   },
   card: {
     padding: 12,
