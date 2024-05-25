@@ -17,6 +17,7 @@
     "react-native-bouncy-checkbox": "^2.0.0",
     "react-native-haptic-feedback": "^2.2.0",
     "react-native-snackbar": "^2.6.2",
+    "react-native-track-player": "^4.1.1",
     "react-native-vector-icons": "^10.1.0",
     "yup": "^1.4.0"
   },
