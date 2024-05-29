@@ -21,9 +21,9 @@ export default function App(): JSX.Element {
     setIsPlayerReady(isSetup);
   }
 
-  // useEffect(() => {
-  //   setup();
-  // }, []);
+  useEffect(() => {
+    setup();
+  }, []);
 
   if (!isPlayerReady) {
     return (

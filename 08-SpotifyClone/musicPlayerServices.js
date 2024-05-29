@@ -24,17 +24,17 @@ export async function addTrack() {
 }
 
 //These are for basic controls of the music player
-export async function playbackService() {
-  TrackPlayer.addEventListener(Event.RemotePause, () => {
-    TrackPlayer.pause();
-  });
-  TrackPlayer.addEventListener(Event.RemotePlay, () => {
-    TrackPlayer.play();
-  });
-  TrackPlayer.addEventListener(Event.RemoteNext, () => {
-    TrackPlayer.skipToNext();
-  });
-  TrackPlayer.addEventListener(Event.RemotePrevious, () => {
-    TrackPlayer.skipToPrevious();
-  });
-}
+// export async function playbackService() {
+//   TrackPlayer.addEventListener(Event.RemotePause, () => {
+//     TrackPlayer.pause();
+//   });
+//   TrackPlayer.addEventListener(Event.RemotePlay, () => {
+//     TrackPlayer.play();
+//   });
+//   TrackPlayer.addEventListener(Event.RemoteNext, () => {
+//     TrackPlayer.skipToNext();
+//   });
+//   TrackPlayer.addEventListener(Event.RemotePrevious, () => {
+//     TrackPlayer.skipToPrevious();
+//   });
+// }

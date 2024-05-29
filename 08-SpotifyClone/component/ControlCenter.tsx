@@ -1,7 +1,7 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import TrackPlayer, {State, usePlaybackState} from 'react-native-track-player';
-import {playbackService} from '../musicPlayerServices';
+// import {playbackService} from '../musicPlayerServices';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function ControlCenter(): JSX.Element {
