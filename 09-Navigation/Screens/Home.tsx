@@ -16,7 +16,7 @@ export default function Home({navigation}: HomeProps) {
       <Button
         title="Go to Details"
         onPress={() =>
-          //using this onPress we can navigate and we have different options for navigation though stack
+          //using this onPress we can navigate and we have different options for navigation though stack (like push, replace etc...)
           //here we use navigate and firstly we pass the screen in which we want to navigate and then props with it
           navigation.navigate('Details', {productId: '8644'})
         }></Button>
