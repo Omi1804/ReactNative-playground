@@ -1,3 +1,4 @@
+//This app is just the revision of navigations in native app
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
@@ -11,15 +12,32 @@ import Details from './Screens/Details';
 //Creating types for different screens
 export type RootStackParamList = {
   Home: undefined;
-  Details: {product: Product};
+  Details: {product: Product}; //we defines the interface Product in the index.d.ts file
 };
 
-//This app is just the revision of navigations in native app
+//declaring the stack
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
 export default function App() {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: 'Trending Products',
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{
+            title: 'Product Details',
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
