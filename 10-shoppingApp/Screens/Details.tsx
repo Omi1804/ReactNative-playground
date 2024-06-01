@@ -10,7 +10,40 @@ type DetailsProps = NativeStackScreenProps<RootStackParamList, 'Details'>;
 const Details = ({route}: DetailsProps) => {
   const {product} = route.params;
   return (
-   
+    <ScrollView style={styles.container}>
+      <View>
+        <Image style={styles.image} source={{uri: product.imageUrl}} />
+        <View>
+          <Text style={styles.name}>{product.name}</Text>
+
+          <View style={[styles.rowContainer, styles.ratingContainer]}>
+            <View style={styles.rating}>
+              <Text style={styles.ratingText}>{product.rating} ★</Text>
+            </View>
+            <Text style={styles.ratingCount}>
+              ({product.ratingCount.toLocaleString()})
+            </Text>
+          </View>
+
+          <View style={[styles.rowContainer, styles.priceContainer]}>
+            <Text style={styles.originalPrice}>
+              ₹{product.originalPrice.toLocaleString()}
+            </Text>
+            <Text style={styles.discountPrice}>
+              ₹{product.discountPrice.toLocaleString()}
+            </Text>
+            <Text style={styles.offerPercentage}>
+              %{product.offerPercentage} off
+            </Text>
+          </View>
+          {product.tags.map((tag, index) => (
+            <View key={index} style={styles.badge}>
+              <Text style={styles.tagBadge}>{tag}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 
