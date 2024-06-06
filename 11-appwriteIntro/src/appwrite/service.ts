@@ -29,6 +29,33 @@ class AppwriteService {
       .setEndpoint(APPWRITE_ENDPOINT)
       .setProject(APPWRITE_PROJECT_ID);
 
-    this.account = new Account();
+    this.account = new Account(appwiteClient);
   }
+
+  //create a new record of user inside appwrite
+
+  async createAccout({email, password, name}: CreateUserAccount) {
+    try {
+      const userAccount = await this.account.create(
+        ID.unique(),
+        email,
+        password,
+        name,
+      );
+
+      if (userAccount) {
+        return this.login({email, password});
+      } else {
+        return userAccount;
+      }
+    } catch (error) {
+      Snackbar.show({
+        text: String(error),
+        duration: Snackbar.LENGTH_LONG,
+      });
+      console.log('Appwrite service :: createAccount() :: ' + error);
+    }
+  }
+
+  async login({email, password}: LoginUserAccount) {}
 }
