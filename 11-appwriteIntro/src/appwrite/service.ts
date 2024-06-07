@@ -57,5 +57,14 @@ class AppwriteService {
     }
   }
 
-  async login({email, password}: LoginUserAccount) {}
+  async login({email, password}: LoginUserAccount) {
+    try {
+    } catch (error) {
+      Snackbar.show({
+        text: String(error),
+        duration: Snackbar.LENGTH_LONG,
+      });
+      console.log('Appwrite service :: createAccount() :: ' + error);
+    }
+  }
 }
