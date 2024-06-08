@@ -1,7 +1,9 @@
 import {ID, Account, Client} from 'appwrite';
 import Config from 'react-native-config';
-
 import Snackbar from 'react-native-snackbar';
+
+//we can find all these in appwrite documentations (appwrite docs auth)
+// we can use this service to anywhere in web or native app
 
 const appwiteClient = new Client();
 
@@ -33,7 +35,6 @@ class AppwriteService {
   }
 
   //create a new record of user inside appwrite
-
   async createAccout({email, password, name}: CreateUserAccount) {
     try {
       const userAccount = await this.account.create(
@@ -57,14 +58,36 @@ class AppwriteService {
     }
   }
 
+  //login the user
   async login({email, password}: LoginUserAccount) {
     try {
+      return await this.account.createEmailPasswordSession(email, password);
     } catch (error) {
       Snackbar.show({
         text: String(error),
         duration: Snackbar.LENGTH_LONG,
       });
-      console.log('Appwrite service :: createAccount() :: ' + error);
+      console.log('Appwrite service :: loginAccout() :: ' + error);
+    }
+  }
+
+  //get current user's details
+  async getCurrentUser() {
+    try {
+      return await this.account.get();
+    } catch (error) {
+      console.log('Appwrite service :: getCurrentUser() :: ' + error);
+    }
+  }
+
+  //Logout the user
+  async logout() {
+    try {
+      return await this.account.deleteSession('current');
+    } catch (error) {
+      console.log('Appwrite service :: getCurrentUser() :: ' + error);
     }
   }
 }
+
+export default AppwriteService;
