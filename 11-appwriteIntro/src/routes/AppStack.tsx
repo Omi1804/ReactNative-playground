@@ -21,5 +21,3 @@ export default function AppStack() {
     </Stack.Navigator>
   );
 }
-
-const styles = StyleSheet.create({});
