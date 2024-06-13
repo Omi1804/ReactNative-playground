@@ -15,12 +15,28 @@ export default function Router() {
   const {appwrite, isLoggedIn, setIsLoggedIn} = useContext(AppwriteContext);
 
   useEffect(() => {
-    appwrite;
+    appwrite
+      .getCurrentUser()
+      .then(resp => {
+        setIsLoading(false);
+
+        if (resp) {
+          setIsLoggedIn(true);
+        }
+      })
+      .catch(_ => {
+        setIsLoading(false);
+        setIsLoggedIn(false);
+      });
   }, [appwrite, setIsLoggedIn]);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
-    <View>
-      <Text>Router</Text>
-    </View>
+    <NavigationContainer>
+      {isLoggedIn ? <AppStack /> : <AuthStack />}
+    </NavigationContainer>
   );
 }
