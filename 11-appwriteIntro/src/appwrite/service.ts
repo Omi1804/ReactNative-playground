@@ -2,8 +2,9 @@ import {ID, Account, Client} from 'appwrite';
 import Config from 'react-native-config';
 import Snackbar from 'react-native-snackbar';
 
-//we can find all these in appwrite documentations (appwrite docs auth)
-// we can use this service to anywhere in web or native app
+// We can find all these in appwrite documentations (appwrite docs auth)
+// We can use this service to anywhere in web or native app
+// This file hols all the logic for us to communicate with appwrite
 
 const appwiteClient = new Client();
 

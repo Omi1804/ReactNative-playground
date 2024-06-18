@@ -1,4 +1,3 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React, {FC, PropsWithChildren, createContext, useState} from 'react';
 
 import AppwriteService from './service';
@@ -23,8 +22,8 @@ const AppwriteProvider: FC<PropsWithChildren> = ({children}) => {
   //creating the default value for provider
   const defaultValue = {
     appwrite: new AppwriteService(),
-    isLoggedIn: false,
-    setIsLoggedIn: () => {},
+    isLoggedIn,
+    setIsLoggedIn,
   };
 
   return (
