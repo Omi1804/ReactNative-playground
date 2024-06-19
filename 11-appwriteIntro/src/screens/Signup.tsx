@@ -10,13 +10,10 @@ import {
 import React, {useContext, useState} from 'react';
 
 //react native styling elements
-import {FAB} from '@rneui/themed';
 import Snackbar from 'react-native-snackbar';
 
 //context API
 import {AppwriteContext} from '../appwrite/AppwriteContext';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {Image} from '@rneui/base';
 
 //navigation
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
